@@ -1,0 +1,41 @@
+﻿@model Fuel_Tracking_application.Models.UpdateFuelDataModel
+@{
+}
+
+
+<h1>Edit Fuel Data</h1>
+<form method="post" action="View" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label">Instance ID</label>
+        <input type="text" class="form-control" asp-for="dataId" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Reporting Employee Name</label>
+        <input type="text" class="form-control" asp-for="reportingEmployee">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Date of Log</label>
+        <input type="date" class="form-control" asp-for="Date">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Odometer Total Reading</label>
+        <input type="number" class="form-control" asp-for="odometerTotal">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Filled Volume</label>
+        <input type="number" class="form-control" asp-for="filledVolume">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Fuel Price</label>
+        <input type="number" class="form-control" asp-for="fuelPrice">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Filled? (Enter Yes or NO)</label>
+        <input type="text" class="form-control" asp-for="filled">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn-danger" asp-action="Delete" asp-controller="FuelData">Delete</button>
+
+
+
+</form>

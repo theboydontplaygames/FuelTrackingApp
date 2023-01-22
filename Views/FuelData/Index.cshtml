@@ -1,0 +1,42 @@
+﻿@model List<Fuel_Tracking_application.Models.Domain.Fuel>
+
+
+@{
+}
+
+<h1>Fuel Data</h1>
+
+<table class="table"> 
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Reporting Employee Name</th>
+        <th>Date of Log</th>
+        <th>Odometer Total Reading</th>
+        <th>Filled Volume</th>
+        <th>Fuel Price</th>
+        <th>Filled?</th>
+        <th>Edit</th>
+
+    </tr>
+    </thead>
+
+<tbody>
+    @foreach (var fuel in Model)
+    {
+        <tr>
+            <td>@fuel.dataId</td>
+            <td>@fuel.reportingEmployee</td>
+            <td>@fuel.Date.ToString("dd-MM-yyyy")</td>
+            <td>@fuel.odometerTotal</td>
+            <td>@fuel.filledVolume</td>
+            <td>@fuel.fuelPrice</td>
+            <td>@fuel.filled</td>
+            <td><a href="FuelData/View/@fuel.dataId">Edit</a></td>
+        </tr>
+    }       
+</tbody>
+</table>
+
+<a href="@Url.Action("ExportToExcel", "Home")">Export to Excel</a>
+
